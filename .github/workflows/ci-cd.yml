@@ -1,27 +1,27 @@
 name: CI/CD Pipeline
 
 on:
-    push:
-          branches:
-                  - main
+  push:
+    branches:
+      - main
 
-          jobs:
-              build:
-                    runs-on: ubuntu-latest
-                          steps:
-                                  - name: Checkout code
-                                            uses: actions/checkout@v2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # GitHub repo se latest code download karega
 
-                                                    - name: Set up Node.js
-                                                              uses: actions/setup-node@v2
-                                                                        with:
-                                                                                    node-version: '14'
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Node.js install karega
+        with:
+          node-version: '18'  # Node.js version 18 install hoga
 
-                                                                                            - name: Install dependencies
-                                                                                                      run: npm install
+      - name: Install dependencies
+        run: npm install  # package.json me jo bhi dependencies hai wo install hongi
 
-                                                                                                              - name: Run tests
-                                                                                                                        run: npm test
+      - name: Run tests
+        run: npm test  # Agar project me test cases hai to wo run honge
 
-                                                                                                                                - name: Build project
-                                                                                                                                          run: npm run build
+      - name: Build project
+        run: npm run build  # Production build generate karega (React, Vue, etc. ke liye)
