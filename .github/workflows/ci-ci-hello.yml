@@ -1,0 +1,18 @@
+name: My First GitHub Action
+
+on:  
+  push:
+    branches:
+      - main  # Jab bhi main branch pe push hoga, tab ye workflow chalega
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest  # Ubuntu machine par ye chalega
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Repository ka code pull karega
+
+      - name: Print Hello World
+        run: echo "Hello, GitHub Actions!"  # Terminal pe ek message print karega
+
