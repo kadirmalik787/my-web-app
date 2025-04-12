@@ -5,18 +5,18 @@ pipeline {
 
     stage('Build') {
         steps {
-          echo "build from github"
+          echo "build from github  ++hoke"
         }
       
     }
     stage('Test') {
       steps {
-        echo "test from github"
+        echo "test from github +hoke"
       }
     }
     stage('Deploy') {
       steps {
-        echo "deploy from github bhaiiii"
+        echo "deploy from github bhaiiii +hokeee ye kiya hai humne ye"
       }
     }
     
