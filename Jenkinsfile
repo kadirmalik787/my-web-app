@@ -23,8 +23,8 @@ pipeline {
   }
   post {
     success {
-      echo "ye bhi hua hamara success// Webhook working fine - testing again
-  "
+      echo "ye bhi hua hamara success// Webhook working fine - testing again"
+
     }
     failure {
       echo " ye to hua hamara failure"
